@@ -5,7 +5,6 @@ description = ""
 authors = [
     {name = "Cam Edwards",email = "cameron.e@sabermine.ai"}
 ]
-readme = "README.md"
 package-mode=false
 requires-python = ">=3.12"
 dependencies = [
@@ -15,7 +14,7 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "--import-mode=importlib --cov . -v --cov-report=html"
+addopts = "--import-mode=importlib --cov . -v --cov-report=html --cov-report xml"
 
 [tool.coverage.run]
 omit = [
