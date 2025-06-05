@@ -44,4 +44,3 @@ jobs:
           github-token: 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
           pytest-coverage-path: ./pytest-coverage.txt
           pytest-xml-coverage-path: ./coverage.xml
-          default-branch: master
