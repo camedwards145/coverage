@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "--import-mode=importlib --cov . -v --cov-report=json"
+addopts = "--import-mode=importlib --cov . -v --cov-report=xml:coverage.xml"
 
 [tool.coverage.run]
 omit = [

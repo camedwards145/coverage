@@ -12,13 +12,7 @@ jobs:
     name: Run tests & display coverage
     runs-on: ubuntu-latest
     permissions:
-      # Gives the action the necessary permissions for publishing new
-      # comments in pull requests.
       pull-requests: write
-      # Gives the action the necessary permissions for pushing data to the
-      # python-coverage-comment-action branch, and for editing existing
-      # comments (to avoid publishing multiple comments in the same PR)
-      contents: write
     steps:
       - name: "Check out repo"
         uses: actions/checkout@v4
@@ -42,7 +36,12 @@ jobs:
       - name: Run tests
         run: |
           source .venv/bin/activate 
-          pytest
+          pytest | tee pytest-coverage.txt
 
-      - name: Coverage comment
-        uses: py-cov-action/python-coverage-comment-action@v3
+      - name: Pytest Coverage Comment
+        uses: MishaKav/pytest-coverage-comment@v1.1.54
+        with:
+          github-token: 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
+          pytest-coverage-path: ./pytest-coverage.txt
+          pytest-xml-coverage-path: ./coverage.xml
+          default-branch: master
