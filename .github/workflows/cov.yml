@@ -46,7 +46,7 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: MishaKav/pytest-coverage-comment@v1.1.54
         with:
-          github-token: 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
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           pytest-coverage-path: ./pytest-coverage.txt
           pytest-xml-coverage-path: ./coverage.xml
       
