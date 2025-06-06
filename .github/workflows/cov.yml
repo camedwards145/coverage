@@ -50,6 +50,9 @@ jobs:
           pytest-coverage-path: ./pytest-coverage.txt
           pytest-xml-coverage-path: ./coverage.xml
       
+      - name: Generate Coverage Badge
+        if: github.ref == 'refs/heads/main'
+        run: poetry genbadge coverage -i coverage.xml -o htmlcov/coverage-badge.svg
 
       - name: Setup Pages
         if: github.ref == 'refs/heads/main'
