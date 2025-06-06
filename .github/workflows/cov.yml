@@ -12,6 +12,7 @@ jobs:
     name: Run tests & display coverage
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pull-requests: write
     steps:
       - name: "Check out repo"
