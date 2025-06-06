@@ -14,15 +14,13 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "--import-mode=importlib --cov . -v --cov-report=xml:coverage.xml"
+addopts = "--import-mode=importlib --cov . -v --cov-report=xml:coverage.xml --cov-report=html"
 
 [tool.coverage.run]
 omit = [
    "*/tests/*",
    "*/tests*",
-   "*__init__*",
-   "*/v1/scripts/*",
-   "*/stacks/*"
+   "*__init__*"
 ]
 branch = true
 
@@ -33,9 +31,7 @@ include = ["project/*"]
 omit = [
    "*/tests/*",
    "*/tests*",
-   "*__init__*",
-   "*/v1/scripts/*",
-   "*/stacks/*"
+   "*__init__*"
 ]
 
 [build-system]
